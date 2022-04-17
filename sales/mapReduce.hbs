@@ -1,0 +1,26 @@
+<!-- Obtaining value from the course controller -->
+<!DOCTYPE html>
+<html>
+
+<div>
+  <a class="btn btn-secondary" href="/sales"><i class="fa fa-plus"></i> Create New</a>
+
+  <h3 align="center">Total Sale</h3>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Manufacturer</th>
+      <th>Sales (Thousands)</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each mapReduce}}
+    <tr align="center">
+      <td>{{this.manufacturer}}</td>
+      <td>{{this.salesInThds}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</html>

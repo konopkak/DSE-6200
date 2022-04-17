@@ -1,0 +1,99 @@
+<!-- Obtaining value from the course controller -->
+<!DOCTYPE html>
+<html>
+
+<div>
+  <h3 align="center">Current Car Inventory</h3><br>
+</div>
+
+
+<div>
+  <a class="btn btn-secondary" href="/sales"><i class="fa fa-plus"></i> Add New Listing</a><br><br><br>
+</div>
+
+
+<style>
+ /* Dropdown Button */
+.dropbtn {
+  background-color: #005A94;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  min-height:50px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;} 
+
+</style>
+
+ <div class="dropdown">
+  <button class="dropbtn">Manufacturer</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div> 
+
+
+<br><br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Vehicle Type</th>
+      <th>Resale Value</th>
+      <th>Listed Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each list}}
+    <tr align="center">
+      <td>{{this.Manufacturer}}</td>
+      <td>{{this.Model}}</td>
+      <td>{{this.Vehicle_Type}}</td>
+      <td>{{this.Resale_Value}}</td>
+      <td>{{this.Listing_Price}}</td>
+      <td>
+        <a href="/sales/{{this._id}}"> Edit  </a>
+        <a href="/sales/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');">  Delete </a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</html>

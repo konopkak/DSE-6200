@@ -1,0 +1,39 @@
+<!-- Obtaining value from the sales controller -->
+<!DOCTYPE html>
+<html>
+<h3>{{viewTitle}}</h3>
+<form action="/sales" method="POST">
+  <input type="hidden" name="_id" value="{{sales._id}}">
+
+  <div class = "form-group">
+    <label>Manufacturer</label>
+    <input type="text" maxlength="100" class="form-control" name="manufacturer" placeholder="Manufacturer" value="{{sales.Manufacturer}}">
+
+    <div class="text-danger">
+      {{sales.manufacturerError}}</div>
+    </div>
+    <div class = "form-group">
+      <label>Model</label>
+      <input type="text" maxlength="100" class="form-control" name="Model" placeholder="Model" value="{{sales.Model}} " required>
+    </div>
+    <div class = "form-row">
+      <div class = "form-group col-md-6">
+        <label>Resale Value</label>
+        <input type="text" class="form-control" name="Resale_Value" placeholder="Value of Vehicle" value="{{sales.Resale_Value}} " required>
+      </div>
+      <div class = "form-group col-md-6">
+        <label>Vehicle Type</label>
+        <input type="text" class="form-control" name="Vehicle_Type" placeholder="Vehicle Type" value="{{sales.Vehicle_Type}} " required>
+      </div>
+      <div class = "form-group col-md-6">
+        <label>Price Listed</label>
+        <input type="text" class="form-control" name="Listed_Price" placeholder="Price Listed" value="{{sales.Listing_Price}} " required>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-info" name="car_listings" value="add"> Submit</button><br><br>
+      <a class="btn btn-secondary" href="/" > Return to Homepage </button><br>
+      <a class="btn btn-secondary" href="sales/list"> View Current Listings</a>
+    </div>
+  </form>
+  </html>
